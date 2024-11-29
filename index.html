@@ -14,25 +14,24 @@
             height: 100vh; /* Volle Höhe der Ansicht */
         }
         .image-container {
-            width: 70%;
-            height: 70%;
-            border: 5px solid white; /* Weißer Rahmen um das Bild */
+            width: 50%; /* Breiter für Smartphones */
+            max-width: 70%; /* Begrenzung für größere Bildschirme */
+            height: auto; /* Dynamische Höhe, angepasst an das Bild */
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black; /* Hintergrund des Rahmens */
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); /* Leichte Leuchteffekt */
         }
         img {
             max-width: 100%;
             max-height: 100%;
             object-fit: contain; /* Bild bleibt im Verhältnis */
+            border-radius: 10px; /* Optional: Abgerundete Ecken */
         }
     </style>
 </head>
 <body>
 <div class="image-container">
-    <img src="images/mayen.jpg" alt="DSC00656">
+    <img src="images/mayen.jpg" alt="Bild von Mayen">
 </div>
 </body>
 </html>
