@@ -3,15 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bildanzeige</title>
+    <title>Bildanzeige mit Menü</title>
     <style>
         body {
             margin: 0;
             background-color: black; /* Schwarzer Hintergrund */
+            color: white; /* Weißer Text für Menü */
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column; /* Menü oben, Inhalt darunter */
+            align-items: center;
+        }
+        nav {
+            width: 100%;
+            background-color: #222; /* Dunkler Hintergrund für das Menü */
+            padding: 10px 0;
+            display: flex;
+            justify-content: center; /* Menü-Einträge in der Mitte */
+            position: fixed; /* Menü bleibt oben fixiert */
+            top: 0;
+            z-index: 1000;
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #00bfff; /* Farbe beim Hover */
+        }
+        .content {
+            margin-top: 60px; /* Platz für das feste Menü */
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* Volle Höhe der Ansicht */
+            height: calc(100vh - 60px); /* Abzug der Menü-Höhe */
+            width: 100%;
         }
         .image-container {
             width: 50%; /* Breiter für Smartphones */
@@ -30,8 +68,17 @@
     </style>
 </head>
 <body>
-<div class="image-container">
-    <img src="images/mayen.jpg" alt="Bild von Mayen">
+<nav>
+    <ul>
+        <li><a href="#software-development">Software Development</a></li>
+        <li><a href="#photography">Photography</a></li>
+        <li><a href="#home-improvement">Home Improvement</a></li>
+    </ul>
+</nav>
+<div class="content">
+    <div class="image-container">
+        <img src="images/mayen.jpg" alt="Bild von Mayen">
+    </div>
 </div>
 </body>
 </html>
