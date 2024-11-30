@@ -29,7 +29,9 @@
             margin: 0;
             padding: 0;
             display: flex;
-            gap: 20px;
+            gap: 10px; /* Weniger Abstand für kleine Geräte */
+            flex-wrap: wrap; /* Zeilenumbruch bei wenig Platz */
+            justify-content: center; /* Zentriert bei mehreren Zeilen */
         }
         nav ul li {
             display: inline;
@@ -38,6 +40,7 @@
             text-decoration: none;
             color: white;
             font-weight: bold;
+            font-size: 16px; /* Kleinere Schrift für Smartphones */
             transition: color 0.3s ease;
         }
         nav ul li a:hover {
@@ -52,7 +55,7 @@
             width: 100%;
         }
         .image-container {
-            width: 50%; /* Breiter für Smartphones */
+            width: 90%; /* Füllt auf Smartphones mehr Platz */
             max-width: 70%; /* Begrenzung für größere Bildschirme */
             height: auto; /* Dynamische Höhe, angepasst an das Bild */
             display: flex;
@@ -65,6 +68,16 @@
             object-fit: contain; /* Bild bleibt im Verhältnis */
             border-radius: 10px; /* Optional: Abgerundete Ecken */
         }
+
+        /* Zusätzliche Styles für Smartphones */
+        @media (max-width: 768px) {
+            nav ul li a {
+                font-size: 14px; /* Noch kleinere Schrift auf sehr kleinen Geräten */
+            }
+            .image-container {
+                width: 100%; /* Bild füllt den gesamten verfügbaren Platz */
+            }
+        }
     </style>
 </head>
 <body>
@@ -72,7 +85,6 @@
     <ul>
         <li><a href="#software-development">Software Development</a></li>
         <li><a href="#photography">Photography</a></li>
-        <li><a href="#home-improvement">Home Improvement</a></li>
     </ul>
 </nav>
 <div class="content">
