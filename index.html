@@ -63,10 +63,10 @@
             align-items: center;
         }
         img {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%; /* Passt die Breite an den Container an */
+            height: auto; /* Hält das Seitenverhältnis des Bildes */
             object-fit: contain; /* Bild bleibt im Verhältnis */
-            border-radius: 10px; /* Optional: Abgerundete Ecken */
+            border-radius: 0; /* Keine abgerundeten Ecken, falls nicht gewünscht */
         }
 
         /* Zusätzliche Styles für Smartphones */
@@ -75,7 +75,13 @@
                 font-size: 14px; /* Noch kleinere Schrift auf sehr kleinen Geräten */
             }
             .image-container {
-                width: 100%; /* Bild füllt den gesamten verfügbaren Platz */
+                width: 100%; /* Füllt auf Smartphones den gesamten Bildschirm */
+                max-width: none; /* Entfernt Begrenzung auf größeren Bildschirmen */
+                height: auto; /* Dynamische Höhe, basierend auf der Breite */
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                padding: 10px; /* Optional: Abstand vom Bildschirmrand */
             }
         }
     </style>
